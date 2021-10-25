@@ -1,0 +1,43 @@
+#include<stdio.h>
+
+int main()
+{
+	int mat[10][10],imgrot[10][10];
+	int i,j,r,c;
+	
+	printf("enter the number of rows and columns of the matrix\t\n");
+	scanf("%d%d",&r,&c);
+	
+	for(i=0;i<r;++i){
+		for(j=0;j<c;++j){
+			printf("enter the elements in the matrix%d%d:", i+1,j+1);
+			scanf("%d",&mat[i][j]);
+		}
+	}
+	
+	
+	printf("the given image is...\n");
+	for(i=0;i<r;++i){
+		for(j=0;j<c;++j){
+		printf("|%d\t",mat[i][j]);
+		if(j==c-1)
+		printf("|\n");
+		
+		}
+	}
+	
+	for(i=0;i<r;++i){
+		for(j=0;j<c;++j){
+			imgrot[j][i]=mat[i][j];
+		}
+	}
+	printf("the image after rotation is:\n");
+	for(i=0;i<c;++i){
+		for(j=0;j<r;++j){
+			printf("|%d\t",imgrot[i][j]);
+			if(j==c-1)
+		printf("|\n");
+					
+		}
+	}return 0;	
+}
